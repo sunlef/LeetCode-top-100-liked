@@ -24,7 +24,7 @@ jobs:
           fi
 
           BADGE_URL="https://img.shields.io/badge/Progress-${DONE}%2F${TOTAL}-${COLOR}"
-          sed -i "s|https://img.shields.io/badge/Progress-.*|$BADGE_URL|g" README.md
+          sed -i "s|!\[Progress\](https://img.shields.io/badge/Progress-[^)]*)|![Progress]($BADGE_URL)|" README.md
 
       - name: Commit changes
         run: |
