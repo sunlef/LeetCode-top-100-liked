@@ -1,7 +1,9 @@
 name: Update Progress Badge
 
 on:
-  push
+  push:
+    paths:
+      - 'solutions/*.h'
 
 jobs:
   update-badge:
