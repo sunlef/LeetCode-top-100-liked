@@ -1,0 +1,35 @@
+name: Update Progress Badge
+
+on:
+  push:
+    paths:
+      - 'solutions/*.h'
+
+jobs:
+  update-badge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Update progress badge
+        run: |
+          DONE=$(find solutions -type f -name "*.h" | wc -l)
+          TOTAL=100
+
+          if [ "$DONE" -ge "$TOTAL" ]; then
+            COLOR="green"
+          else
+            COLOR="blue"
+          fi
+
+          BADGE_URL="https://img.shields.io/badge/Progress-${DONE}%2F${TOTAL}-${COLOR}"
+          sed -i "s|https://img.shields.io/badge/Progress-.*|$BADGE_URL|g" README.md
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add README.md
+          git commit -m "Update progress badge"
+          git push
