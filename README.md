@@ -2,4 +2,4 @@ My implementation of LeetCode's [Top 100 Liked (热题 100)](https://leetcode.cn
 
 Solutions go in the `/solutions` folder.
 
-![Progress](https://img.shields.io/badge/Progress-9%2F100-blue)
+![Progress](https://img.shields.io/badge/Progress-10%2F100-blue)
