@@ -6,10 +6,10 @@ class Solution {
     std::map<char, int> count;
 
     int ans = 0;
-    for (int x = 0, y = -1; x < n; count[s[x] - 'a'] -= 1, x++) {
-      while (y + 1 < n && count[s[y + 1] - 'a'] == 0) {
+    for (int x = 0, y = -1; x < n; count[s[x]] -= 1, x++) {
+      while (y + 1 < n && count[s[y + 1]] == 0) {
         y += 1;
-        count[s[y] - 'a'] += 1;
+        count[s[y]] += 1;
       }
       ans = std::max(ans, y - x + 1);
     }
