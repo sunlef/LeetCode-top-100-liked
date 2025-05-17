@@ -15,3 +15,6 @@
 #include <vector>
 
 using namespace std;
+
+#include "LeetCodeClass.h"
+#include "debug.h"

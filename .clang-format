@@ -1,3 +1,4 @@
 BasedOnStyle: Google
 PointerAlignment: Right
 ReferenceAlignment: Right
+ColumnLimit: 100
